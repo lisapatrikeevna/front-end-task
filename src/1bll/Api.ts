@@ -3,7 +3,8 @@ import {carType} from "./CarReducer"
 
 
 const instans = axios.create({
-    baseURL: 'https://cors-anywhere.herokuapp.com/https://test-backend.esverito.com/api/',
+    //baseURL: 'https://cors-anywhere.herokuapp.com/https://test-backend.esverito.com/api/',
+    baseURL: 'https://test-backend.esverito.com/api/',
 })
 export const Car = {
     getCars() {

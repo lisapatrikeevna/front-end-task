@@ -66,7 +66,6 @@ export const setErrAC = (err: string) => ({type: 'SET_ERR', err} as const)
 export const getCarsTC = () => (dispatch: Dispatch) => {
     Car.getCars()
         .then(res => {
-            // debugger
             // @ts-ignore
             dispatch(getCarsAC(res.data.cars))
         }).catch(e => {
