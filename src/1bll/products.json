@@ -1,0 +1,39 @@
+{
+  "data" : [
+  {
+    "brand": "Nissan",
+    "carNumber": "AA 1111 AA",
+    "EngineType": "Double  Cylinder Engine",
+    "model": "Juke",
+    "id": "1"
+  },
+  {
+    "brand": "Toyota",
+    "carNumber": "BB 2222 BB",
+    "EngineType": "Double  Cylinder Engine",
+    "model": "Camry",
+    "id": "2"
+  },
+  {
+    "brand": "Mazda",
+    "carNumber": "CC 3333 CC",
+    "EngineType": "Double  Cylinder Engine",
+    "model": "3",
+    "id": "3"
+  },
+  {
+    "brand": "Suzuki",
+    "carNumber": "DD 4444 DD",
+    "EngineType": "Double  Cylinder Engine",
+    "model": "Jimny",
+    "id": "4"
+  },
+  {
+    "brand": "Honda",
+    "carNumber": "EE 5555 EE",
+    "EngineType": "Double  Cylinder Engine",
+    "model": "Civic",
+    "id": "5"
+  }
+]
+}

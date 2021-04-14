@@ -1,0 +1,40 @@
+
+.App {
+    text-align: center;
+}
+
+.container {
+    padding: 0 39px;
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    padding: 29px 0;
+}
+
+.head h2 {
+    margin: 0;
+}
+
+.logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+.tableBody {
+    background: #fff;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
