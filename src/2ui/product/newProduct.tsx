@@ -16,12 +16,20 @@ const NewProduct = () => {
     const showModal = () => {
         setIsModalVisible(true)
     }
+    const removeData = () =>{
+        setBrand('')
+        setModel('')
+        setCarnumber('')
+        setEnginetype('')
+    }
     const handleOk = () => {
         dispatch(addCarTC({brand, carNumber, engineType, model}))
         setIsModalVisible(false)
+        removeData()
     }
     const handleCancel = () => {
         setIsModalVisible(false)
+        removeData()
     }
 
     return (
@@ -29,7 +37,7 @@ const NewProduct = () => {
             <Button type="primary" onClick={showModal} className={cl.btn}>
                create car
             </Button>
-            <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+            <Modal title="ADD A NEW CAR" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
                     <Input placeholder='Brand' type='text' value={brand} addInputValue={setBrand}/>
                     <Input placeholder='Model' type='text' value={model} addInputValue={setModel}/>
                     <Input placeholder='Car Number' type='text' value={carNumber} addInputValue={setCarnumber}/>

@@ -1,4 +1,5 @@
 import React, {ChangeEvent, useEffect, useState} from 'react'
+import cl from './input.module.css'
 
 type inputType = {
     placeholder: string
@@ -20,7 +21,7 @@ const Input = (props: inputType) => {
     return (
         <input type={props.type} placeholder={props.placeholder}
                value={value} onChange={onChangeHandler}
-               onBlur={handleBlur}
+               onBlur={handleBlur} className={cl.input}
         />
     )
 }

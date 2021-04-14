@@ -21,3 +21,18 @@ code {
 .ant-table-pagination.ant-pagination {
   margin: 1% 5%;
 }
+.ant-modal-content{
+  background: #F8F7F8;
+}
+.input:focus {
+  border-color: transparent;
+}
+.ant-modal-footer .ant-btn + .ant-btn{
+  border: 1px solid #22B2BE;
+  background: #22B2BE;
+  color: #fff;
+}
+.ant-btn:hover, .ant-btn:focus, .ant-modal-footer .ant-btn + .ant-btn:hover{
+  color: #22B2BE;
+  background: transparent;
+}

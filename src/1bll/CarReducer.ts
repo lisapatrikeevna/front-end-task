@@ -1,5 +1,6 @@
 import {Dispatch} from "redux"
-import {Car, modelCar} from "./Api";
+import {Car, modelCar} from "./Api"
+
 
 type getCarsACType = ReturnType<typeof getCarsAC>
 type setErrACType = ReturnType<typeof setErrAC>
@@ -69,7 +70,6 @@ export const getCarsTC = () => (dispatch: Dispatch) => {
             // @ts-ignore
             dispatch(getCarsAC(res.data.cars))
         }).catch(e => {
-        console.log(e.message);
         dispatch(setErrAC(e.message))
     })
 }
@@ -78,7 +78,6 @@ export const addCarTC = ({brand, carNumber, engineType, model}: modelCar) => (di
         .then(res => {
             dispatch(addNewCarAC(res.data.car))
         }).catch(e => {
-        console.log(e.message);
         dispatch(setErrAC(e.message))
     })
 }
@@ -93,9 +92,12 @@ export const removeCarTC = (id: number) => (dispatch: Dispatch) => {
 }
 export const updateCarTC = (id: number, {brand, carNumber, engineType, model}: modelCar) => (dispatch: Dispatch) => {
     Car.updateCar(id, {brand, carNumber, engineType, model}).then(res => {
-        dispatch(updateCarAC({id, brand, carNumber, engineType, model}))
+        if(res.status===200){
+            dispatch(updateCarAC({id, brand, carNumber, engineType, model}))
+        }else {
+            dispatch(setErrAC(res.statusText))
+        }
     }).catch(e => {
-        console.log(e.message);
         dispatch(setErrAC(e.message))
     })
 }

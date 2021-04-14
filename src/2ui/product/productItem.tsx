@@ -4,6 +4,7 @@ import {carType, updateCarTC} from "../../1bll/CarReducer"
 import {Modal} from "antd"
 import Input from "../common/input"
 import {EditOutlined} from '@ant-design/icons'
+import cl from './product.module.css'
 
 
 type propsType = {
@@ -26,11 +27,19 @@ const ProductItem = ({car}: propsType) => {
         setCarnumber(car.carNumber)
         setEnginetype(car.engineType)
     }
+    const removeData = () =>{
+        setBrand('')
+        setModel('')
+        setCarnumber('')
+        setEnginetype('')
+    }
     const handleOk = () => {
         dispatch(updateCarTC(car.id, {brand, carNumber, engineType, model}))
         setIsModalVisible(false)
+        removeData()
     }
     const handleCancel = () => {
+        removeData()
         setIsModalVisible(false)
     }
 
@@ -39,11 +48,13 @@ const ProductItem = ({car}: propsType) => {
         <>
             <EditOutlined onClick={showModal} style={{fontSize: '20px', color: '#26253D', padding: '0 10px'}}/>
 
-            <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-                <Input placeholder='Brand' type='text' value={brand} addInputValue={setBrand}/>
-                <Input placeholder='Model' type='text' value={model} addInputValue={setModel}/>
-                <Input placeholder='Car Number' type='text' value={carNumber} addInputValue={setCarnumber}/>
-                <Input placeholder='Engine Type' type='text' value={engineType} addInputValue={setEnginetype}/>
+            <Modal title="EDIT CAR INFORMATION" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+                <div className={cl.modal}>
+                    <Input placeholder='Brand' type='text' value={brand} addInputValue={setBrand}/>
+                    <Input placeholder='Model' type='text' value={model} addInputValue={setModel}/>
+                    <Input placeholder='Car Number' type='text' value={carNumber} addInputValue={setCarnumber}/>
+                    <Input placeholder='Engine Type' type='text' value={engineType} addInputValue={setEnginetype}/>
+                </div>
             </Modal>
         </>
     )
